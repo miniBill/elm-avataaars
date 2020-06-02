@@ -90,6 +90,36 @@ view model =
         , Element.text ""
         ]
             ++ viewPickers model
+            ++ footer
+
+
+footer : List (Element msg)
+footer =
+    [ Element.row []
+        [ Element.text "Designed by "
+        , Element.newTabLink [ Font.color <| Element.rgb 0 0 1, Font.underline ]
+            { url = "https://twitter.com/pablostanley"
+            , label = Element.text "Pablo Stanley"
+            }
+        , Element.text " 🎨"
+        ]
+    , Element.row []
+        [ Element.text "SVG by "
+        , Element.newTabLink [ Font.color <| Element.rgb 0 0 1, Font.underline ]
+            { url = "https://twitter.com/fangpenlin"
+            , label = Element.text "Fang-Pen Lin"
+            }
+        , Element.text " 💻"
+        ]
+    , Element.row []
+        [ Element.text "Elm port by "
+        , Element.newTabLink [ Font.color <| Element.rgb 0 0 1, Font.underline ]
+            { url = "https://twitter.com/miniBill"
+            , label = Element.text "Leonardo Taglialegne"
+            }
+        , Element.text " \u{1F986}"
+        ]
+    ]
 
 
 pickers : Avataaar -> List (Picker Avataaar)
