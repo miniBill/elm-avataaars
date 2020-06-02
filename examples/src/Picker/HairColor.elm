@@ -1,21 +1,21 @@
 module Picker.HairColor exposing (list, picker)
 
-import HairColor exposing (HairColor(..))
+import HairColor exposing (HairColor)
 import Picker exposing (Picker)
 
 
 list : List ( String, HairColor )
 list =
-    [ ( "Auburn", Auburn )
-    , ( "Black", Black )
-    , ( "Blonde", Blonde )
-    , ( "Blonde Golden", BlondeGolden )
-    , ( "Brown", Brown )
-    , ( "Brown Dark", BrownDark )
-    , ( "Pastel Pink", PastelPink )
-    , ( "Platinum", Platinum )
-    , ( "Red", Red )
-    , ( "Silver Gray", SilverGray )
+    [ ( "Auburn", HairColor.auburn )
+    , ( "Black", HairColor.black )
+    , ( "Blonde", HairColor.blonde )
+    , ( "Blonde Golden", HairColor.blondeGolden )
+    , ( "Brown", HairColor.brown )
+    , ( "Brown Dark", HairColor.brownDark )
+    , ( "Pastel Pink", HairColor.pastelPink )
+    , ( "Platinum", HairColor.platinum )
+    , ( "Red", HairColor.red )
+    , ( "Silver Gray", HairColor.silverGray )
     ]
 
 
@@ -23,15 +23,5 @@ picker : HairColor -> Picker HairColor
 picker =
     Picker.color
         { name = "Hair Color"
-        , colorToHex = HairColor.colorToHex
         , list = list
-        , custom = Custom
-        , fromCustom =
-            \c ->
-                case c of
-                    Custom i ->
-                        Just i
-
-                    _ ->
-                        Nothing
         }

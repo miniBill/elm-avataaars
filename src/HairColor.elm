@@ -1,62 +1,65 @@
-module HairColor exposing (HairColor(..), colorToHex, view)
+module HairColor exposing (HairColor, auburn, black, blonde, blondeGolden, brown, brownDark, pastelPink, platinum, red, silverGray, view)
 
 import Svg exposing (Svg, g, mask, rect)
 import Svg.Attributes as A exposing (fill, height, width, x, y)
 
 
-type HairColor
-    = Auburn
-    | Black
-    | Blonde
-    | BlondeGolden
-    | Brown
-    | BrownDark
-    | PastelPink
-    | Platinum
-    | Red
-    | SilverGray
-    | Custom String
+type alias HairColor =
+    String
 
 
-colorToHex : HairColor -> String
-colorToHex hairColor =
-    case hairColor of
-        Auburn ->
-            "#A55728"
+auburn : HairColor
+auburn =
+    "#A55728"
 
-        Black ->
-            "#2C1B18"
 
-        Blonde ->
-            "#B58143"
+black : HairColor
+black =
+    "#2C1B18"
 
-        BlondeGolden ->
-            "#D6B370"
 
-        Brown ->
-            "#724133"
+blonde : HairColor
+blonde =
+    "#B58143"
 
-        BrownDark ->
-            "#4A312C"
 
-        PastelPink ->
-            "#F59797"
+blondeGolden : HairColor
+blondeGolden =
+    "#D6B370"
 
-        Platinum ->
-            "#ECDCBF"
 
-        Red ->
-            "#C93305"
+brown : HairColor
+brown =
+    "#724133"
 
-        SilverGray ->
-            "#E8E1E1"
 
-        Custom string ->
-            string
+brownDark : HairColor
+brownDark =
+    "#4A312C"
+
+
+pastelPink : HairColor
+pastelPink =
+    "#F59797"
+
+
+platinum : HairColor
+platinum =
+    "#ECDCBF"
+
+
+red : HairColor
+red =
+    "#C93305"
+
+
+silverGray : HairColor
+silverGray =
+    "#E8E1E1"
 
 
 view : { maskId : String, hairColor : HairColor } -> Svg msg
 view { maskId, hairColor } =
-    g [ A.mask <| "url(#" ++ maskId ++ ")", fill <| colorToHex hairColor ]
+    g [ A.mask <| "url(#" ++ maskId ++ ")", fill hairColor ]
         [ rect [ x "0", y "0", width "264", height "280" ] []
         ]

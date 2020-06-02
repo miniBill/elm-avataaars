@@ -2,8 +2,8 @@ module Top exposing (AccFac(..), AccHairFac(..), AccHat(..), AccHatFac(..), Fac(
 
 import Accessory exposing (Accessory(..))
 import FacialHair exposing (FacialHair(..))
-import HairColor exposing (HairColor(..))
-import HatColor exposing (HatColor(..))
+import HairColor exposing (HairColor)
+import HatColor exposing (HatColor)
 import Svg exposing (Svg, circle, defs, ellipse, feColorMatrix, feMerge, feMergeNode, feOffset, filter, g, mask, path, polygon, rect, use)
 import Svg.Attributes as A exposing (cx, cy, d, dx, dy, fill, fillOpacity, fillRule, filterUnits, height, id, in_, opacity, points, r, result, rx, ry, stroke, strokeWidth, transform, type_, values, width, x, xlinkHref, y)
 

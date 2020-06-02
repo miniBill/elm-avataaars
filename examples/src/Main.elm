@@ -17,7 +17,6 @@ import Picker.Clothes
 import Picker.Face
 import Picker.SkinTone
 import Picker.Top
-import SkinTone
 import Top
 
 
@@ -46,7 +45,7 @@ init : Model
 init =
     { avataaar =
         { circleBg = True
-        , skinTone = SkinTone.Custom "#00F0B0"
+        , skinTone = "#00F0B0"
         , clothes = Clothes.BlazerShirt
         , face =
             { mouth = Mouth.Default

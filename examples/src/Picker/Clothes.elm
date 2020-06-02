@@ -1,6 +1,6 @@
 module Picker.Clothes exposing (picker)
 
-import Clothes exposing (Clothes(..), Color(..))
+import Clothes exposing (Clothes(..), Color)
 import Graphics exposing (Graphics(..))
 import Picker exposing (Picker)
 import Picker.Graphics as Graphics
@@ -29,10 +29,10 @@ picker clothes =
     in
     case clothes of
         BlazerShirt ->
-            [ radio Black Graphics.Bat ]
+            [ radio Clothes.black Graphics.Bat ]
 
         BlazerSweater ->
-            [ radio Black Graphics.Bat ]
+            [ radio Clothes.black Graphics.Bat ]
 
         CollarSweater color ->
             [ radio color Graphics.Bat
@@ -73,21 +73,21 @@ picker clothes =
 
 colorList : List ( String, Color )
 colorList =
-    [ ( "Black", Black )
-    , ( "Blue01", Blue01 )
-    , ( "Blue02", Blue02 )
-    , ( "Blue03", Blue03 )
-    , ( "Gray01", Gray01 )
-    , ( "Gray02", Gray02 )
-    , ( "Heather", Heather )
-    , ( "Pastel Blue", PastelBlue )
-    , ( "Pastel Green", PastelGreen )
-    , ( "Pastel Orange", PastelOrange )
-    , ( "Pastel Red", PastelRed )
-    , ( "Pastel Yellow", PastelYellow )
-    , ( "Pink", Pink )
-    , ( "Red", Red )
-    , ( "White", White )
+    [ ( "Black", Clothes.black )
+    , ( "Blue01", Clothes.blue01 )
+    , ( "Blue02", Clothes.blue02 )
+    , ( "Blue03", Clothes.blue03 )
+    , ( "Gray01", Clothes.gray01 )
+    , ( "Gray02", Clothes.gray02 )
+    , ( "Heather", Clothes.heather )
+    , ( "Pastel Blue", Clothes.pastelBlue )
+    , ( "Pastel Green", Clothes.pastelGreen )
+    , ( "Pastel Orange", Clothes.pastelOrange )
+    , ( "Pastel Red", Clothes.pastelRed )
+    , ( "Pastel Yellow", Clothes.pastelYellow )
+    , ( "Pink", Clothes.pink )
+    , ( "Red", Clothes.red )
+    , ( "White", Clothes.white )
     ]
 
 
@@ -95,15 +95,5 @@ colorPicker : Color -> Picker Color
 colorPicker =
     Picker.color
         { name = "Clothes Color"
-        , colorToHex = Clothes.colorToHex
         , list = colorList
-        , custom = Custom
-        , fromCustom =
-            \c ->
-                case c of
-                    Custom i ->
-                        Just i
-
-                    _ ->
-                        Nothing
         }

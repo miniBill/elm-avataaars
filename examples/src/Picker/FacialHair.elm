@@ -1,7 +1,7 @@
 module Picker.FacialHair exposing (picker)
 
 import FacialHair exposing (FacialHair(..))
-import HairColor exposing (HairColor(..))
+import HairColor exposing (HairColor)
 import Picker exposing (Picker)
 import Picker.HairColor
 
@@ -26,22 +26,12 @@ picker facialHair =
         hairColorPicker =
             Picker.color
                 { name = "Facial Hair Color"
-                , colorToHex = HairColor.colorToHex
                 , list = Picker.HairColor.list
-                , custom = Custom
-                , fromCustom =
-                    \c ->
-                        case c of
-                            Custom i ->
-                                Just i
-
-                            _ ->
-                                Nothing
                 }
     in
     case facialHair of
         Blank ->
-            [ mainPicker HairColor.Black ]
+            [ mainPicker HairColor.black ]
 
         BeardMedium hairColor ->
             [ mainPicker hairColor

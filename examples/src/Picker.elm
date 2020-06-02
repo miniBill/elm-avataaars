@@ -69,8 +69,12 @@ text { name, list } selected =
     }
 
 
-color : { name : String, colorToHex : color -> String, list : List ( String, color ), custom : String -> color, fromCustom : color -> Maybe String } -> color -> Picker color
-color { name, colorToHex, list, custom, fromCustom } selected =
+type alias Color =
+    String
+
+
+color : { name : String, list : List ( String, Color ) } -> Color -> Picker Color
+color { name, list } selected =
     let
         gray =
             Element.rgb255 0xD0 0xD0 0xD0
@@ -98,25 +102,28 @@ color { name, colorToHex, list, custom, fromCustom } selected =
         option ( k, v, isCustom ) =
             let
                 contrastColor =
-                    contrast <| Maybe.withDefault gray <| colorFromHex <| colorToHex v
+                    contrast <| Maybe.withDefault gray <| colorFromHex v
+
+                isSelected =
+                    String.toLower v == String.toLower selected
             in
             Input.button
                 [ Element.alignTop
                 , Element.width <| Element.px 180
                 , Element.height <| Element.px <| round <| 180 / phi
                 , Border.width <|
-                    if selected == v then
+                    if isSelected then
                         4
 
                     else
                         1
                 , Border.color <|
-                    if selected == v then
+                    if isSelected then
                         Element.rgb 0.3 0.3 1
 
                     else
                         Element.rgb 0 0 0
-                , Background.color <| Maybe.withDefault gray <| colorFromHex <| colorToHex v
+                , Background.color <| Maybe.withDefault gray <| colorFromHex v
                 , Element.padding 10
                 ]
             <|
@@ -126,8 +133,8 @@ color { name, colorToHex, list, custom, fromCustom } selected =
                             [ Element.text "Custom: "
                             , Element.html <|
                                 Html.input
-                                    [ Html.Events.onClick <| custom k
-                                    , Html.Events.onInput custom
+                                    [ Html.Events.onClick k
+                                    , Html.Events.onInput identity
                                     , Html.Attributes.value k
                                     , Html.Attributes.type_ "color"
                                     ]
@@ -139,13 +146,16 @@ color { name, colorToHex, list, custom, fromCustom } selected =
                 , onPress = Just v
                 }
 
+        custom =
+            if List.any (\( _, v ) -> String.toLower v == String.toLower selected) list then
+                "#00F0B0"
+
+            else
+                selected
+
         listWithCustom =
             List.map (\( k, v ) -> ( k, v, False )) list
-                ++ [ ( Maybe.withDefault "#00F0B0" <| fromCustom selected
-                     , custom <| Maybe.withDefault "#00F0B0" <| fromCustom selected
-                     , True
-                     )
-                   ]
+                ++ [ ( custom, custom, True ) ]
     in
     { name = name
     , picker =
@@ -161,7 +171,7 @@ map f { name, picker } =
     }
 
 
-colorFromHex : String -> Maybe Color
+colorFromHex : String -> Maybe Element.Color
 colorFromHex hex =
     let
         tuple h l =

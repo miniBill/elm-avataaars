@@ -1,4 +1,4 @@
-module Clothes exposing (Clothes(..), Color(..), colorToHex, view)
+module Clothes exposing (Clothes(..), Color, black, blue01, blue02, blue03, gray01, gray02, heather, pastelBlue, pastelGreen, pastelOrange, pastelRed, pastelYellow, pink, red, view, white)
 
 import Graphics exposing (Graphics(..))
 import Svg exposing (Svg, circle, defs, ellipse, g, mask, path, rect, use)
@@ -188,76 +188,84 @@ shirtVNeck color =
 
 colors : { maskId : String, color : Color } -> Svg msg
 colors { maskId, color } =
-    g [ A.mask <| "url(#" ++ maskId ++ ")", fillRule "evenodd", fill <| colorToHex color ]
+    g [ A.mask <| "url(#" ++ maskId ++ ")", fillRule "evenodd", fill color ]
         [ rect [ id "🖍Color", x "0", y "0", width "264", height "110" ] [] ]
 
 
-type Color
-    = Black
-    | Blue01
-    | Blue02
-    | Blue03
-    | Gray01
-    | Gray02
-    | Heather
-    | PastelBlue
-    | PastelGreen
-    | PastelOrange
-    | PastelRed
-    | PastelYellow
-    | Pink
-    | Red
-    | White
-    | Custom String
+type alias Color =
+    String
 
 
-colorToHex : Color -> String
-colorToHex color =
-    case color of
-        Black ->
-            "#262E33"
+black : Color
+black =
+    "#262E33"
 
-        Blue01 ->
-            "#65C9FF"
 
-        Blue02 ->
-            "#5199E4"
+blue01 : Color
+blue01 =
+    "#65C9FF"
 
-        Blue03 ->
-            "#25557C"
 
-        Gray01 ->
-            "#E6E6E6"
+blue02 : Color
+blue02 =
+    "#5199E4"
 
-        Gray02 ->
-            "#929598"
 
-        Heather ->
-            "#3C4F5C"
+blue03 : Color
+blue03 =
+    "#25557C"
 
-        PastelBlue ->
-            "#B1E2FF"
 
-        PastelGreen ->
-            "#A7FFC4"
+gray01 : Color
+gray01 =
+    "#E6E6E6"
 
-        PastelOrange ->
-            "#FFDEB5"
 
-        PastelRed ->
-            "#FFAFB9"
+gray02 : Color
+gray02 =
+    "#929598"
 
-        PastelYellow ->
-            "#FFFFB1"
 
-        Pink ->
-            "#FF488E"
+heather : Color
+heather =
+    "#3C4F5C"
 
-        Red ->
-            "#FF5C5C"
 
-        White ->
-            "#FFFFFF"
+pastelBlue : Color
+pastelBlue =
+    "#B1E2FF"
 
-        Custom string ->
-            string
+
+pastelGreen : Color
+pastelGreen =
+    "#A7FFC4"
+
+
+pastelOrange : Color
+pastelOrange =
+    "#FFDEB5"
+
+
+pastelRed : Color
+pastelRed =
+    "#FFAFB9"
+
+
+pastelYellow : Color
+pastelYellow =
+    "#FFFFB1"
+
+
+pink : Color
+pink =
+    "#FF488E"
+
+
+red : Color
+red =
+    "#FF5C5C"
+
+
+white : Color
+white =
+    "#FFFFFF"

@@ -1,7 +1,11 @@
-module SkinTone exposing (SkinTone(..), toHex, view)
+module SkinTone exposing (SkinTone, black, brown, darkBrown, light, pale, tanned, view, yellow)
 
 import Svg exposing (Svg, mask, rect)
 import Svg.Attributes as A exposing (fill, height, width, x, y)
+
+
+type alias SkinTone =
+    String
 
 
 view : SkinTone -> Svg msg
@@ -12,45 +16,41 @@ view skinTone =
         , width "264"
         , height "280"
         , A.mask "url(#mask-6)"
-        , fill <| toHex skinTone
+        , fill skinTone
         ]
         []
 
 
-type SkinTone
-    = Tanned
-    | Yellow
-    | Pale
-    | Light
-    | Brown
-    | DarkBrown
-    | Black
-    | Custom String
+tanned : SkinTone
+tanned =
+    "#FD9841"
 
 
-toHex : SkinTone -> String
-toHex skinTone =
-    case skinTone of
-        Tanned ->
-            "#FD9841"
+yellow : SkinTone
+yellow =
+    "#F8D25C"
 
-        Yellow ->
-            "#F8D25C"
 
-        Pale ->
-            "#FFDBB4"
+pale : SkinTone
+pale =
+    "#FFDBB4"
 
-        Light ->
-            "#EDB98A"
 
-        Brown ->
-            "#D08B5B"
+light : SkinTone
+light =
+    "#EDB98A"
 
-        DarkBrown ->
-            "#AE5D29"
 
-        Black ->
-            "#614335"
+brown : SkinTone
+brown =
+    "#D08B5B"
 
-        Custom string ->
-            string
+
+darkBrown : SkinTone
+darkBrown =
+    "#AE5D29"
+
+
+black : SkinTone
+black =
+    "#614335"

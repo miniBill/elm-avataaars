@@ -1,4 +1,21 @@
-module Avataaars exposing (Avataaar, view)
+module Avataaars exposing
+    ( Avataaar
+    , view
+    )
+
+{-| An `Avataaar` contains all the information to draw a cute avatar
+
+
+# Definition
+
+@docs Avataaar
+
+
+# View
+
+@docs view
+
+-}
 
 import Clothes exposing (Clothes)
 import Eyebrow exposing (Eyebrow(..))

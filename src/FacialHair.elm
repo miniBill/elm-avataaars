@@ -1,6 +1,6 @@
 module FacialHair exposing (FacialHair(..), view)
 
-import HairColor exposing (HairColor(..))
+import HairColor exposing (HairColor)
 import Svg exposing (Svg, defs, g, mask, path, text, use)
 import Svg.Attributes exposing (d, fill, fillRule, id, transform, xlinkHref)
 
