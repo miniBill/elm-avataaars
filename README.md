@@ -6,7 +6,7 @@ Original art is by [Pablo Stanley](https://twitter.com/pablostanley), original S
 ## Usage
 The modules are meant to be imported qualified, with types exposed as needed, you can optionally alias `Avataars.XYZ` to `XYZ` for less verbosity.
 
-```Elm
+```
 import Avataaars exposing (Avataaar)
 import Avataaars.Accessory as Accessory
 import Avataaars.Clothes as Clothes

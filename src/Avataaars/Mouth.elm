@@ -1,6 +1,16 @@
 module Avataaars.Mouth exposing (Mouth(..))
 
+{-|
 
+
+# Definition
+
+@docs Mouth
+
+-}
+
+
+{-| -}
 type Mouth
     = Concerned
     | Default

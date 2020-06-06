@@ -1,4 +1,13 @@
-module Avataaars.Top exposing (Top(..), TopAccessoryFacialHair(..), TopAccessoryHairColorFacialHair(..), TopAccessoryHatColor(..), TopAccessoryHatColorFacialHair(..), TopFacialHair(..))
+module Avataaars.Top exposing (Top(..), TopFacialHair(..), TopHatColorAccessory(..), TopAccessoryFacialHair(..), TopHatColorAccessoryFacialHair(..), TopHairColorAccessoryFacialHair(..))
+
+{-|
+
+
+# Types
+
+@docs Top, TopFacialHair, TopHatColorAccessory, TopAccessoryFacialHair, TopHatColorAccessoryFacialHair, TopHairColorAccessoryFacialHair
+
+-}
 
 import Avataaars.Accessory exposing (Accessory)
 import Avataaars.FacialHair exposing (FacialHair)
@@ -6,22 +15,30 @@ import Avataaars.HairColor exposing (HairColor)
 import Avataaars.HatColor exposing (HatColor)
 
 
+{-| A type represeting an hair/hat/accessory combo
+-}
 type Top
     = TopFacialHair TopFacialHair FacialHair
-    | TopAccessoryHatColor TopAccessoryHatColor Accessory HatColor
+    | TopHatColorAccessory TopHatColorAccessory HatColor Accessory
     | TopAccessoryFacialHair TopAccessoryFacialHair Accessory FacialHair
-    | TopAccessoryHatColorFacialHair TopAccessoryHatColorFacialHair HatColor Accessory FacialHair
-    | TopAccessoryHairColorFacialHair TopAccessoryHairColorFacialHair HairColor Accessory FacialHair
+    | TopHatColorAccessoryFacialHair TopHatColorAccessoryFacialHair HatColor Accessory FacialHair
+    | TopHairColorAccessoryFacialHair TopHairColorAccessoryFacialHair HairColor Accessory FacialHair
 
 
+{-| A `Top` supporting `FacialHair` only.
+-}
 type TopFacialHair
     = Eyepatch
 
 
-type TopAccessoryHatColor
+{-| A `Top` supporting `HatColor` and `Accessory` only.
+-}
+type TopHatColorAccessory
     = Hijab
 
 
+{-| A `Top` supporting `Accessory` and `FacialHair` only.
+-}
 type TopAccessoryFacialHair
     = NoHair
     | Hat
@@ -29,7 +46,9 @@ type TopAccessoryFacialHair
     | LongHairShavedSides
 
 
-type TopAccessoryHatColorFacialHair
+{-| A `Top` supporting `HatColor`, `Accessory` and `FacialHair`.
+-}
+type TopHatColorAccessoryFacialHair
     = Turban
     | WinterHat1
     | WinterHat2
@@ -37,7 +56,9 @@ type TopAccessoryHatColorFacialHair
     | WinterHat4
 
 
-type TopAccessoryHairColorFacialHair
+{-| A `Top` supporting `HairColor`, `Accessory` and `FacialHair`.
+-}
+type TopHairColorAccessoryFacialHair
     = LongHairBigHair
     | LongHairBob
     | LongHairBun

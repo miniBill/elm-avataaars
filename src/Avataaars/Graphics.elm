@@ -1,6 +1,16 @@
 module Avataaars.Graphics exposing (Graphics(..))
 
+{-| Graphics for the "Graphics Shirt".
 
+
+# Graphics
+
+@docs Graphics
+
+-}
+
+
+{-| -}
 type Graphics
     = Bat
     | Cumbia

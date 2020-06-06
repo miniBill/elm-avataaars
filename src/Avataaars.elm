@@ -60,12 +60,8 @@ type alias Avataaar =
     }
 
 
-
-{-
-   Transform an `Avataaar` into an `Svg msg`.
+{-| Transform an `Avataaar` into an `Svg msg`.
 -}
-
-
 view : { width : Int, height : Int } -> Avataaar -> Svg msg
 view { width, height } { circleBg, skinTone, clothes, face, top } =
     let

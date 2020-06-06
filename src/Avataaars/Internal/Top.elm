@@ -9,7 +9,7 @@ import Avataaars.Internal.FacialHair as FacialHair
 import Avataaars.Internal.HairColor as HairColor
 import Avataaars.Internal.HatColor as HatColor
 import Avataaars.Internal.Matrices exposing (matrixDot2)
-import Avataaars.Top exposing (Top(..), TopAccessoryFacialHair(..), TopAccessoryHairColorFacialHair(..), TopAccessoryHatColor(..), TopAccessoryHatColorFacialHair(..), TopFacialHair(..))
+import Avataaars.Top exposing (Top(..), TopAccessoryFacialHair(..), TopFacialHair(..), TopHairColorAccessoryFacialHair(..), TopHatColorAccessory(..), TopHatColorAccessoryFacialHair(..))
 import Svg exposing (Svg, circle, defs, ellipse, feMerge, feMergeNode, feOffset, filter, g, mask, path, polygon, rect)
 import Svg.Attributes as A exposing (cx, cy, d, dx, dy, fill, fillOpacity, filterUnits, height, id, in_, opacity, points, r, result, rx, ry, stroke, transform, width, x, y)
 
@@ -32,29 +32,29 @@ view top =
         TopAccessoryFacialHair LongHairShavedSides accessory facialHair ->
             longHairShavedSides accessory facialHair
 
-        TopAccessoryHatColor Hijab accessory hatColor ->
-            hijab accessory hatColor
+        TopHatColorAccessory Hijab hatColor accessory ->
+            hijab hatColor accessory
 
-        TopAccessoryHatColorFacialHair Turban hatColor accessory facialHair ->
+        TopHatColorAccessoryFacialHair Turban hatColor accessory facialHair ->
             turban hatColor accessory facialHair
 
-        TopAccessoryHatColorFacialHair WinterHat1 hatColor accessory facialHair ->
+        TopHatColorAccessoryFacialHair WinterHat1 hatColor accessory facialHair ->
             winterHat1 hatColor accessory facialHair
 
-        TopAccessoryHatColorFacialHair WinterHat2 hatColor accessory facialHair ->
+        TopHatColorAccessoryFacialHair WinterHat2 hatColor accessory facialHair ->
             winterHat2 hatColor accessory facialHair
 
-        TopAccessoryHatColorFacialHair WinterHat3 hatColor accessory facialHair ->
+        TopHatColorAccessoryFacialHair WinterHat3 hatColor accessory facialHair ->
             winterHat3 hatColor accessory facialHair
 
-        TopAccessoryHatColorFacialHair WinterHat4 hatColor accessory facialHair ->
+        TopHatColorAccessoryFacialHair WinterHat4 hatColor accessory facialHair ->
             winterHat4 hatColor accessory facialHair
 
-        TopAccessoryHairColorFacialHair kind hairColor accessory facialHair ->
+        TopHairColorAccessoryFacialHair kind hairColor accessory facialHair ->
             standard (topAccessoryHairColorFacialHairToSvg kind hairColor) accessory facialHair
 
 
-topAccessoryHairColorFacialHairToSvg : TopAccessoryHairColorFacialHair -> HairColor -> List (Svg msg)
+topAccessoryHairColorFacialHairToSvg : TopHairColorAccessoryFacialHair -> HairColor -> List (Svg msg)
 topAccessoryHairColorFacialHairToSvg kind =
     case kind of
         LongHairBigHair ->
@@ -163,8 +163,8 @@ hat =
         ]
 
 
-hijab : Accessory -> HatColor -> Svg msg
-hijab accessory hatColor =
+hijab : HatColor -> Accessory -> Svg msg
+hijab hatColor accessory =
     g []
         [ mask [ id "hijabMask2", fill "white" ]
             [ path [ d "M66,77 C72,45 100,21 133,21 L133,21 L133,21 C171,21 201,51 201,89 L201,120 C202,130 203,136 203,140 C205,147 209,145 209,155 C209,165 205,169 205,178 C205,187 220,194 220,205 C220,217 213,270 143,270 C128,270 115,266 104,258 C105,264 105,272 106,280 L59,280 C60,256 52,243 52,216 C52,190 65,151 65,142 C65,141 65,141 65,140 C65,139 65,138 65,137 L65,89 L65,89 C65,85 65,81 66,77 C66,77 66,77 66,77 C66,77 66,77 66,77 Z M132.5,53 L132.5,53 C102,53 78,77 78,107.5 L78,107.5 L78,130.5 C78,161 102,185 132.5,185 L133.5,185 C164,185 188,161 188,130.5 L188,107.5 C188,77 164,53 133.5,53 L133.5,53 L132.5,53 Z", id "hijabPath" ] [] ]
