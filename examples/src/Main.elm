@@ -1,5 +1,6 @@
 module Main exposing (main)
 
+import Accessory
 import Avataaars exposing (Avataaar)
 import Browser
 import Clothes
@@ -17,6 +18,7 @@ import Picker.Clothes
 import Picker.Face
 import Picker.SkinTone
 import Picker.Top
+import SkinTone
 import Top
 
 
@@ -45,14 +47,14 @@ init : Model
 init =
     { avataaar =
         { circleBg = True
-        , skinTone = "#00F0B0"
+        , skinTone = SkinTone.black
         , clothes = Clothes.BlazerShirt
         , face =
             { mouth = Mouth.Default
             , eyes = Eyes.Default
             , eyebrow = Eyebrow.Default
             }
-        , top = Top.TopFacialHair Top.Eyepatch FacialHair.Blank
+        , top = Top.TopAccessoryFacialHair Top.NoHair Accessory.Blank FacialHair.Blank
         }
     , selectedTab = "Background Circle"
     }
@@ -99,24 +101,18 @@ view model =
 
 footer : List (Element msg)
 footer =
-    [ Element.row []
+    [ Element.row [Element.centerX]
         [ Element.text "Designed by "
         , Element.newTabLink [ Font.color <| Element.rgb 0 0 1, Font.underline ]
             { url = "https://twitter.com/pablostanley"
             , label = Element.text "Pablo Stanley"
             }
-        , Element.text " 🎨"
-        ]
-    , Element.row []
-        [ Element.text "SVG by "
+        , Element.text " 🎨 - SVG by "
         , Element.newTabLink [ Font.color <| Element.rgb 0 0 1, Font.underline ]
             { url = "https://twitter.com/fangpenlin"
             , label = Element.text "Fang-Pen Lin"
             }
-        , Element.text " 💻"
-        ]
-    , Element.row []
-        [ Element.text "Elm port by "
+        , Element.text " 💻 - Elm port by "
         , Element.newTabLink [ Font.color <| Element.rgb 0 0 1, Font.underline ]
             { url = "https://twitter.com/miniBill"
             , label = Element.text "Leonardo Taglialegne"
