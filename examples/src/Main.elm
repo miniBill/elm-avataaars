@@ -52,7 +52,7 @@ init =
             , eyes = Eyes.Default
             , eyebrow = Eyebrow.Default
             }
-        , top = Top.Fac Top.Eyepatch FacialHair.Blank
+        , top = Top.TopFacialHair Top.Eyepatch FacialHair.Blank
         }
     , selectedTab = "Background Circle"
     }
@@ -86,7 +86,11 @@ view model =
           <|
             Element.map Avataaar <|
                 Element.html <|
-                    Avataaars.view model.avataaar
+                    Avataaars.view
+                        { width = round <| 1.7 * 264
+                        , height = round <| 1.7 * 280
+                        }
+                        model.avataaar
         , Element.text ""
         ]
             ++ viewPickers model
@@ -184,21 +188,21 @@ viewPickers model =
                 , Element.padding 10
                 ]
             <|
-                Element.text " "
+                Element.text ""
 
-        bigSpacer =
+        lastSpacer =
             Element.el
                 [ Border.widthEach { top = 0, left = 0, right = 0, bottom = 1 }
                 , Element.width Element.fill
                 , Element.padding 10
                 ]
             <|
-                Element.text " "
+                Element.text ""
 
         spaced =
             List.map toTabButton raw
                 |> List.intersperse spacer
-                |> (\l -> spacer :: l ++ [ bigSpacer ])
+                |> (\l -> spacer :: l ++ [ lastSpacer ])
     in
     [ Element.wrappedRow [ Element.spacingXY 0 10, Element.width Element.fill, Element.height Element.shrink ] spaced
     , Element.el
