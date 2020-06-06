@@ -1,7 +1,7 @@
 module Picker.SkinTone exposing (picker)
 
+import Avataaars.SkinTone as SkinTone exposing (SkinTone)
 import Picker exposing (Picker)
-import SkinTone exposing (SkinTone)
 
 
 list : List ( String, SkinTone )

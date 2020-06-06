@@ -1,17 +1,10 @@
-module FacialHair exposing (FacialHair(..), view)
+module Avataaars.Internal.FacialHair exposing (view)
 
-import HairColor exposing (HairColor)
+import Avataaars.FacialHair exposing (FacialHair(..))
+import Avataaars.HairColor exposing (HairColor)
+import Avataaars.Internal.HairColor as HairColor
 import Svg exposing (Svg, defs, g, mask, path, use)
 import Svg.Attributes exposing (d, fill, id, transform, xlinkHref)
-
-
-type FacialHair
-    = Blank
-    | BeardMedium HairColor
-    | BeardLight HairColor
-    | BeardMajestic HairColor
-    | MoustacheFancy HairColor
-    | MoustacheMagnum HairColor
 
 
 view : FacialHair -> Svg msg

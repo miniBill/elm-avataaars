@@ -1,21 +1,8 @@
-module Graphics exposing (Graphics(..), view)
+module Avataaars.Internal.Graphics exposing (view)
 
+import Avataaars.Graphics exposing (Graphics(..))
 import Svg exposing (Svg, g, path)
 import Svg.Attributes exposing (d, fill, strokeWidth, transform)
-
-
-type Graphics
-    = Bat
-    | Cumbia
-    | Deer
-    | Diamond
-    | Hola
-    | Pizza
-    | Resist
-    | Selena
-    | Bear
-    | SkullOutline
-    | Skull
 
 
 view : Graphics -> Svg msg

@@ -1,6 +1,6 @@
 module Picker.HairColor exposing (list, picker)
 
-import HairColor exposing (HairColor)
+import Avataaars.HairColor as HairColor exposing (HairColor)
 import Picker exposing (Picker)
 
 

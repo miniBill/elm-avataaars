@@ -1,6 +1,6 @@
 module Picker.HatColor exposing (picker)
 
-import HatColor exposing (HatColor)
+import Avataaars.HatColor as HatColor exposing (HatColor)
 import Picker exposing (Picker)
 
 

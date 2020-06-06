@@ -1,7 +1,7 @@
 module Picker.Clothes exposing (picker)
 
-import Clothes exposing (Clothes(..), Color)
-import Graphics exposing (Graphics(..))
+import Avataaars.Clothes as Clothes exposing (Clothes(..), Color)
+import Avataaars.Graphics as Graphics exposing (Graphics(..))
 import Picker exposing (Picker)
 import Picker.Graphics as Graphics
 

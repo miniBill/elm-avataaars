@@ -1,7 +1,4 @@
-module HatColor exposing (HatColor, black, blue01, blue02, blue03, gray01, gray02, heather, pastelBlue, pastelGreen, pastelOrange, pastelRed, pastelYellow, pink, red, view, white)
-
-import Svg exposing (Svg, g, mask, rect)
-import Svg.Attributes as A exposing (fill, fillRule, height, id, width, x, y)
+module Avataaars.HatColor exposing (HatColor, black, blue01, blue02, blue03, gray01, gray02, heather, pastelBlue, pastelGreen, pastelOrange, pastelRed, pastelYellow, pink, red, white)
 
 
 type alias HatColor =
@@ -81,10 +78,3 @@ red =
 white : HatColor
 white =
     "#FFFFFF"
-
-
-view : { maskId : String, hatColor : HatColor } -> Svg msg
-view { maskId, hatColor } =
-    g [ A.mask <| "url(#" ++ maskId ++ ")", fillRule "evenodd", fill hatColor ]
-        [ rect [ id "🖍Color", x "0", y "0", width "264", height "280" ] []
-        ]

@@ -1,18 +1,9 @@
-module Accessory exposing (Accessory(..), view)
+module Avataaars.Internal.Accessory exposing (view)
 
-import Internal.Matrices exposing (matrixDot1, matrixDot16, matrixDot2)
+import Avataaars.Accessory exposing (Accessory(..))
+import Avataaars.Internal.Matrices exposing (matrixDot1, matrixDot16, matrixDot2)
 import Svg exposing (Svg, defs, feMerge, feMergeNode, feOffset, filter, g, linearGradient, path, stop, text, use)
 import Svg.Attributes as A exposing (d, dx, dy, fill, fillOpacity, fillRule, filterUnits, height, id, in_, offset, result, stopColor, stopOpacity, strokeWidth, style, transform, width, x, x1, x2, xlinkHref, y, y1, y2)
-
-
-type Accessory
-    = Blank
-    | Kurt
-    | Prescription01
-    | Prescription02
-    | Round
-    | Sunglasses
-    | Wayfarers
 
 
 view : Accessory -> Svg msg

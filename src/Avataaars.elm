@@ -17,18 +17,40 @@ module Avataaars exposing
 
 -}
 
-import Clothes exposing (Clothes)
-import Eyebrow exposing (Eyebrow(..))
-import Eyes exposing (Eyes(..))
-import Face exposing (Face)
-import FacialHair exposing (FacialHair(..))
-import Mouth exposing (Mouth(..))
-import SkinTone exposing (SkinTone)
+import Avataaars.Clothes exposing (Clothes)
+import Avataaars.Eyebrow exposing (Eyebrow(..))
+import Avataaars.Eyes exposing (Eyes(..))
+import Avataaars.Face exposing (Face)
+import Avataaars.FacialHair exposing (FacialHair(..))
+import Avataaars.Internal.Clothes as Clothes
+import Avataaars.Internal.Face as Face
+import Avataaars.Internal.SkinTone as SkinTone
+import Avataaars.Internal.Top as Top
+import Avataaars.Mouth exposing (Mouth(..))
+import Avataaars.SkinTone as SkinTone exposing (SkinTone)
+import Avataaars.Top as Top exposing (Top(..))
 import Svg exposing (Svg, circle, g, mask, path)
-import Svg.Attributes as A exposing (cx, cy, d, fill, fillOpacity, fillRule, height, id, r, stroke, strokeWidth, transform, viewBox, width)
-import Top exposing (Top(..))
+import Svg.Attributes as A exposing (cx, cy, d, fill, fillOpacity, id, r, transform, viewBox)
 
 
+{-| An `Avataaar` is a description of how to draw an avataaar.
+
+Example:
+
+    avataaar : Avataaar
+    avataaar =
+        { circleBg = True
+        , skinTone = SkinTone.black
+        , clothes = Clothes.BlazerShirt
+        , face =
+            { mouth = Mouth.Default
+            , eyes = Eyes.Default
+            , eyebrow = Eyebrow.Default
+            }
+        , top = Top.TopAccessoryFacialHair Top.NoHair Accessory.Blank FacialHair.Blank
+        }
+
+-}
 type alias Avataaar =
     { circleBg : Bool
     , skinTone : SkinTone

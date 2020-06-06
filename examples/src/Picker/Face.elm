@@ -1,6 +1,6 @@
 module Picker.Face exposing (picker)
 
-import Face exposing (Face)
+import Avataaars.Face as Face exposing (Face)
 import Picker exposing (Picker)
 import Picker.Eyebrow
 import Picker.Eyes

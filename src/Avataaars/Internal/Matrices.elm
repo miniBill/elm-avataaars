@@ -1,4 +1,4 @@
-module Internal.Matrices exposing (matrixDot1, matrixDot16, matrixDot2)
+module Avataaars.Internal.Matrices exposing (matrixDot1, matrixDot16, matrixDot2)
 
 import Svg exposing (Svg, feColorMatrix)
 import Svg.Attributes exposing (in_, result, type_, values)

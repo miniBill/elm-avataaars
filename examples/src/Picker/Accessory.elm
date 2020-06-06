@@ -1,6 +1,6 @@
 module Picker.Accessory exposing (picker)
 
-import Accessory exposing (Accessory(..))
+import Avataaars.Accessory as Accessory exposing (Accessory(..))
 import Picker exposing (Picker)
 
 

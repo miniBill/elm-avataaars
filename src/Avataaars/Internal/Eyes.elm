@@ -1,22 +1,8 @@
-module Eyes exposing (Eyes(..), view)
+module Avataaars.Internal.Eyes exposing (view)
 
+import Avataaars.Eyes exposing (Eyes(..))
 import Svg exposing (Svg, circle, defs, g, mask, path, use)
 import Svg.Attributes as A exposing (cx, cy, d, fill, fillRule, id, r, transform, xlinkHref)
-
-
-type Eyes
-    = Close
-    | Cry
-    | Default
-    | Dizzy
-    | EyeRoll
-    | Happy
-    | Hearts
-    | Side
-    | Squint
-    | Surprised
-    | Wink
-    | WinkWacky
 
 
 view : Eyes -> Svg msg

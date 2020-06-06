@@ -1,6 +1,6 @@
 module Picker.Eyes exposing (picker)
 
-import Eyes exposing (Eyes(..))
+import Avataaars.Eyes as Eyes exposing (Eyes(..))
 import Picker exposing (Picker)
 
 

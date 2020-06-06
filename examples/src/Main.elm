@@ -1,25 +1,25 @@
 module Main exposing (main)
 
-import Accessory
 import Avataaars exposing (Avataaar)
+import Avataaars.Accessory as Accessory
+import Avataaars.Clothes as Clothes
+import Avataaars.Eyebrow as Eyebrow
+import Avataaars.Eyes as Eyes
+import Avataaars.FacialHair as FacialHair
+import Avataaars.Mouth as Mouth
+import Avataaars.SkinTone as SkinTone
+import Avataaars.Top as Top
 import Browser
-import Clothes
 import Element exposing (Element)
 import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
 import Element.Input as Input
-import Eyebrow
-import Eyes
-import FacialHair
-import Mouth
 import Picker exposing (Picker)
 import Picker.Clothes
 import Picker.Face
 import Picker.SkinTone
 import Picker.Top
-import SkinTone
-import Top
 
 
 type alias Model =
@@ -101,7 +101,7 @@ view model =
 
 footer : List (Element msg)
 footer =
-    [ Element.row [Element.centerX]
+    [ Element.row [ Element.centerX ]
         [ Element.text "Designed by "
         , Element.newTabLink [ Font.color <| Element.rgb 0 0 1, Font.underline ]
             { url = "https://twitter.com/pablostanley"

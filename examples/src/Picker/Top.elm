@@ -1,15 +1,15 @@
 module Picker.Top exposing (picker)
 
-import Accessory exposing (Accessory)
-import FacialHair exposing (FacialHair)
-import HairColor exposing (HairColor)
-import HatColor exposing (HatColor)
+import Avataaars.Accessory as Accessory exposing (Accessory)
+import Avataaars.FacialHair as FacialHair exposing (FacialHair)
+import Avataaars.Top as Top exposing (Top(..), TopAccessoryFacialHair(..), TopAccessoryHairColorFacialHair(..), TopAccessoryHatColor(..), TopAccessoryHatColorFacialHair(..), TopFacialHair(..))
+import Avataaars.HairColor as HairColor exposing (HairColor)
+import Avataaars.HatColor as HatColor exposing (HatColor)
 import Picker exposing (Picker)
 import Picker.Accessory
 import Picker.FacialHair
 import Picker.HairColor
 import Picker.HatColor
-import Top exposing (Top(..), TopAccessoryFacialHair(..), TopAccessoryHairColorFacialHair(..), TopAccessoryHatColor(..), TopAccessoryHatColorFacialHair(..), TopFacialHair(..))
 
 
 picker : Top -> List (Picker Top)

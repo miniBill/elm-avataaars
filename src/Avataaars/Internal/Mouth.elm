@@ -1,23 +1,9 @@
-module Mouth exposing (Mouth(..), view)
+module Avataaars.Internal.Mouth exposing (view)
 
-import Internal.Matrices exposing (matrixDot1)
+import Avataaars.Internal.Matrices exposing (matrixDot1)
+import Avataaars.Mouth exposing (Mouth(..))
 import Svg exposing (Svg, circle, defs, feComposite, feOffset, filter, g, mask, path, rect, use)
 import Svg.Attributes as A exposing (cx, cy, d, dx, dy, fill, fillOpacity, fillRule, filterUnits, height, id, in2, in_, k2, k3, operator, r, result, rx, strokeWidth, transform, width, x, xlinkHref, y)
-
-
-type Mouth
-    = Concerned
-    | Default
-    | Disbelief
-    | Eating
-    | Grimace
-    | Sad
-    | ScreamOpen
-    | Serious
-    | Smile
-    | Tongue
-    | Twinkle
-    | Vomit
 
 
 view : Mouth -> Svg msg

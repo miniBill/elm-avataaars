@@ -1,6 +1,6 @@
 module Picker.Eyebrow exposing (picker)
 
-import Eyebrow exposing (Eyebrow(..))
+import Avataaars.Eyebrow as Eyebrow exposing (Eyebrow(..))
 import Picker exposing (Picker)
 
 

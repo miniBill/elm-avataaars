@@ -1,22 +1,8 @@
-module Eyebrow exposing (Eyebrow(..), view)
+module Avataaars.Internal.Eyebrow exposing (view)
 
+import Avataaars.Eyebrow exposing (Eyebrow(..))
 import Svg exposing (Svg, g, path)
 import Svg.Attributes exposing (d, transform)
-
-
-type Eyebrow
-    = Angry
-    | AngryNatural
-    | Default
-    | DefaultNatural
-    | FlatNatural
-    | RaisedExcited
-    | RaisedExcitedNatural
-    | SadConcerned
-    | SadConcernedNatural
-    | UnibrowNatural
-    | UpDown
-    | UpDownNatural
 
 
 view : Eyebrow -> Svg msg

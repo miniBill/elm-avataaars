@@ -1,17 +1,11 @@
-module Face exposing (Face, view)
+module Avataaars.Internal.Face exposing (view)
 
-import Eyebrow exposing (Eyebrow(..))
-import Eyes exposing (Eyes(..))
-import Mouth exposing (Mouth(..))
+import Avataaars.Face exposing (Face)
+import Avataaars.Internal.Eyebrow as Eyebrow
+import Avataaars.Internal.Eyes as Eyes
+import Avataaars.Internal.Mouth as Mouth
 import Svg exposing (Svg, g, path)
 import Svg.Attributes exposing (d, fill, fillOpacity, transform)
-
-
-type alias Face =
-    { mouth : Mouth
-    , eyes : Eyes
-    , eyebrow : Eyebrow
-    }
 
 
 view : Face -> Svg msg

@@ -1,6 +1,6 @@
 module Picker.Mouth exposing (picker)
 
-import Mouth exposing (Mouth(..))
+import Avataaars.Mouth as Mouth exposing (Mouth(..))
 import Picker exposing (Picker)
 
 

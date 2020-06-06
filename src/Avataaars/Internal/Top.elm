@@ -1,70 +1,17 @@
-module Top exposing (TopAccessoryFacialHair(..), Top(..), TopAccessoryHairColorFacialHair(..), TopAccessoryHatColor(..), TopAccessoryHatColorFacialHair(..), TopFacialHair(..), view)
+module Avataaars.Internal.Top exposing (view)
 
-import Accessory exposing (Accessory(..))
-import FacialHair exposing (FacialHair(..))
-import HairColor exposing (HairColor)
-import HatColor exposing (HatColor)
-import Internal.Matrices exposing (matrixDot2)
+import Avataaars.Accessory exposing (Accessory(..))
+import Avataaars.FacialHair exposing (FacialHair(..))
+import Avataaars.HairColor exposing (HairColor)
+import Avataaars.HatColor exposing (HatColor)
+import Avataaars.Internal.Accessory as Accessory
+import Avataaars.Internal.FacialHair as FacialHair
+import Avataaars.Internal.HairColor as HairColor
+import Avataaars.Internal.HatColor as HatColor
+import Avataaars.Internal.Matrices exposing (matrixDot2)
+import Avataaars.Top exposing (Top(..), TopAccessoryFacialHair(..), TopAccessoryHairColorFacialHair(..), TopAccessoryHatColor(..), TopAccessoryHatColorFacialHair(..), TopFacialHair(..))
 import Svg exposing (Svg, circle, defs, ellipse, feMerge, feMergeNode, feOffset, filter, g, mask, path, polygon, rect)
 import Svg.Attributes as A exposing (cx, cy, d, dx, dy, fill, fillOpacity, filterUnits, height, id, in_, opacity, points, r, result, rx, ry, stroke, transform, width, x, y)
-
-
-type Top
-    = TopFacialHair TopFacialHair FacialHair
-    | TopAccessoryHatColor TopAccessoryHatColor Accessory HatColor
-    | TopAccessoryFacialHair TopAccessoryFacialHair Accessory FacialHair
-    | TopAccessoryHatColorFacialHair TopAccessoryHatColorFacialHair HatColor Accessory FacialHair
-    | TopAccessoryHairColorFacialHair TopAccessoryHairColorFacialHair HairColor Accessory FacialHair
-
-
-type TopFacialHair
-    = Eyepatch
-
-
-type TopAccessoryHatColor
-    = Hijab
-
-
-type TopAccessoryFacialHair
-    = NoHair
-    | Hat
-    | LongHairFrida
-    | LongHairShavedSides
-
-
-type TopAccessoryHatColorFacialHair
-    = Turban
-    | WinterHat1
-    | WinterHat2
-    | WinterHat3
-    | WinterHat4
-
-
-type TopAccessoryHairColorFacialHair
-    = LongHairBigHair
-    | LongHairBob
-    | LongHairBun
-    | LongHairCurly
-    | LongHairCurvy
-    | LongHairDreads
-    | LongHairFro
-    | LongHairFroBand
-    | LongHairNotTooLong
-    | LongHairMiaWallace
-    | LongHairStraight
-    | LongHairStraight2
-    | LongHairStraightStrand
-    | ShortHairDreads01
-    | ShortHairDreads02
-    | ShortHairFrizzle
-    | ShortHairShaggyMullet
-    | ShortHairShortCurly
-    | ShortHairShortFlat
-    | ShortHairShortRound
-    | ShortHairShortWaved
-    | ShortHairSides
-    | ShortHairTheCaesar
-    | ShortHairTheCaesarSidePart
 
 
 view : Top -> Svg msg

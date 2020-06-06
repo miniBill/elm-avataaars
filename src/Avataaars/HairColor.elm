@@ -1,7 +1,4 @@
-module HairColor exposing (HairColor, auburn, black, blonde, blondeGolden, brown, brownDark, pastelPink, platinum, red, silverGray, view)
-
-import Svg exposing (Svg, g, mask, rect)
-import Svg.Attributes as A exposing (fill, height, width, x, y)
+module Avataaars.HairColor exposing (HairColor, auburn, black, blonde, blondeGolden, brown, brownDark, pastelPink, platinum, red, silverGray)
 
 
 type alias HairColor =
@@ -56,10 +53,3 @@ red =
 silverGray : HairColor
 silverGray =
     "#E8E1E1"
-
-
-view : { maskId : String, hairColor : HairColor } -> Svg msg
-view { maskId, hairColor } =
-    g [ A.mask <| "url(#" ++ maskId ++ ")", fill hairColor ]
-        [ rect [ x "0", y "0", width "264", height "280" ] []
-        ]

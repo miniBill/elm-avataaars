@@ -1,6 +1,6 @@
 module Picker.Graphics exposing (picker)
 
-import Graphics exposing (Graphics(..))
+import Avataaars.Graphics as Graphics exposing (Graphics(..))
 import Picker exposing (Picker)
 
 

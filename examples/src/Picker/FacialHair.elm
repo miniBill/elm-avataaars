@@ -1,7 +1,7 @@
 module Picker.FacialHair exposing (picker)
 
-import FacialHair exposing (FacialHair(..))
-import HairColor exposing (HairColor)
+import Avataaars.FacialHair as FacialHair exposing (FacialHair(..))
+import Avataaars.HairColor as HairColor exposing (HairColor)
 import Picker exposing (Picker)
 import Picker.HairColor
 
