@@ -117,7 +117,7 @@ footer =
             { url = "https://twitter.com/miniBill"
             , label = Element.text "Leonardo Taglialegne"
             }
-        , Element.text " \u{1F986}"
+        , Element.text " 🦆"
         ]
     ]
 
