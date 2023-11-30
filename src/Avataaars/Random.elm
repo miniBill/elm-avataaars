@@ -37,8 +37,7 @@ import Random.Extra
 -}
 generate : Generator Avataaar
 generate =
-    Random.map4 Avataaar Random.Extra.bool generateSkinTone generateClothes generateFace
-        |> Random.Extra.andMap generateTop
+    Random.map5 Avataaar Random.Extra.bool generateSkinTone generateClothes generateFace generateTop
 
 
 generateAccessory : Generator Accessory
