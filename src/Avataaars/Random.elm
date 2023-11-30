@@ -224,25 +224,51 @@ generateSkinTone =
 
 generateTop : Generator Top
 generateTop =
-    Random.Extra.map6
-        (\topFacialHair topHatColorAccessory topAccessoryFacialHair topHatColorAccessoryFacialHair topHairColorAccessoryFacialHair facialHair hatColor accessory hairColor ->
-            Random.uniform (Avataaars.Top.TopFacialHair topFacialHair facialHair)
-                [ Avataaars.Top.TopHatColorAccessory topHatColorAccessory hatColor accessory
-                , Avataaars.Top.TopAccessoryFacialHair topAccessoryFacialHair accessory facialHair
-                , Avataaars.Top.TopHatColorAccessoryFacialHair topHatColorAccessoryFacialHair hatColor accessory facialHair
-                , Avataaars.Top.TopHairColorAccessoryFacialHair topHairColorAccessoryFacialHair hairColor accessory facialHair
-                ]
-        )
-        generateTopFacialHair
+    Random.Extra.choices generateTopFacialHairGenerator
+        [ generateTopHatColorAccessoryGenerator
+        , generateTopAccessoryFacialHairGenerator
+        , generateTopHatColorAccessoryFacialHairGenerator
+        , generateTopHairColorAccessoryFacialHairGenerator
+        ]
+
+
+generateTopFacialHairGenerator : Generator Top
+generateTopFacialHairGenerator =
+    Random.map2 Avataaars.Top.TopFacialHair generateTopFacialHair generateFacialHair
+
+
+generateTopHatColorAccessoryGenerator : Generator Top
+generateTopHatColorAccessoryGenerator =
+    Random.map3 Avataaars.Top.TopHatColorAccessory
         generateTopHatColorAccessory
+        generateHatColor
+        generateAccessory
+
+
+generateTopAccessoryFacialHairGenerator : Generator Top
+generateTopAccessoryFacialHairGenerator =
+    Random.map3 Avataaars.Top.TopAccessoryFacialHair
         generateTopAccessoryFacialHair
-        generateTopHatColorAccessoryFacialHair
-        generateTopHairColorAccessoryFacialHair
+        generateAccessory
         generateFacialHair
-        |> Random.Extra.andMap generateHatColor
-        |> Random.Extra.andMap generateAccessory
-        |> Random.Extra.andMap generateHairColor
-        |> Random.andThen identity
+
+
+generateTopHatColorAccessoryFacialHairGenerator : Generator Top
+generateTopHatColorAccessoryFacialHairGenerator =
+    Random.map4 Avataaars.Top.TopHatColorAccessoryFacialHair
+        generateTopHatColorAccessoryFacialHair
+        generateHatColor
+        generateAccessory
+        generateFacialHair
+
+
+generateTopHairColorAccessoryFacialHairGenerator : Generator Top
+generateTopHairColorAccessoryFacialHairGenerator =
+    Random.map4 Avataaars.Top.TopHairColorAccessoryFacialHair
+        generateTopHairColorAccessoryFacialHair
+        generateHairColor
+        generateAccessory
+        generateFacialHair
 
 
 generateTopFacialHair : Generator Avataaars.Top.TopFacialHair
