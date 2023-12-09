@@ -1,4 +1,2 @@
-/elm-stuff
-/build
-elm-watch.json
 node_modules
+elm-stuff

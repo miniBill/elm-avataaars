@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "elm-hot": "^1.1.6",
-    "node-elm-compiler": "^5.0.6"
+    "elm-watch": "^1.1.2"
   }
 }
