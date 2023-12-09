@@ -1,7 +1,7 @@
 module Avataaars.Internal.SkinTone exposing (view)
 
 import Avataaars.SkinTone exposing (SkinTone)
-import Svg exposing (Svg, mask, rect)
+import Svg exposing (Svg, rect)
 import Svg.Attributes as A exposing (fill, height, width, x, y)
 
 

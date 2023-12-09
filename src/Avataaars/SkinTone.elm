@@ -13,14 +13,15 @@ module Avataaars.SkinTone exposing
 
 # Default tones
 
-These are just `String`s, so feel free to define others, and _do_ let your users choose their own.
+These are just hex `String`s, so feel free to define others, and _do_ let your users choose their own.
 
 @docs black, brown, darkBrown, light, pale, tanned, yellow
 
 -}
 
 
-{-| -}
+{-| A skin tone is just a string containing a color such as `"#F8D25C"`.
+-}
 type alias SkinTone =
     String
 

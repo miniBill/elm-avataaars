@@ -15,7 +15,7 @@ import Avataaars.HairColor exposing (HairColor)
 import Avataaars.HatColor exposing (HatColor)
 
 
-{-| A type represeting an hair/hat/accessory combo
+{-| A type represeting an hair/hat/accessory combo.
 -}
 type Top
     = TopFacialHair TopFacialHair FacialHair

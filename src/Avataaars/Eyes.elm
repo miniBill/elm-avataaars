@@ -10,7 +10,8 @@ module Avataaars.Eyes exposing (Eyes(..))
 -}
 
 
-{-| -}
+{-| Eyes kinds.
+-}
 type Eyes
     = Close
     | Cry

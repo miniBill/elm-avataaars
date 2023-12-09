@@ -1,7 +1,7 @@
 module Avataaars.Internal.HairColor exposing (view)
 
 import Avataaars.HairColor exposing (HairColor)
-import Svg exposing (Svg, g, mask, rect)
+import Svg exposing (Svg, g, rect)
 import Svg.Attributes as A exposing (fill, height, width, x, y)
 
 

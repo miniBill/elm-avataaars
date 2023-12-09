@@ -11,24 +11,20 @@ module Avataaars exposing
 @docs Avataaar
 
 
-# View
+# View function
 
 @docs view
 
 -}
 
 import Avataaars.Clothes exposing (Clothes)
-import Avataaars.Eyebrow exposing (Eyebrow(..))
-import Avataaars.Eyes exposing (Eyes(..))
 import Avataaars.Face exposing (Face)
-import Avataaars.FacialHair exposing (FacialHair(..))
 import Avataaars.Internal.Clothes as Clothes
 import Avataaars.Internal.Face as Face
 import Avataaars.Internal.SkinTone as SkinTone
 import Avataaars.Internal.Top as Top
-import Avataaars.Mouth exposing (Mouth(..))
-import Avataaars.SkinTone as SkinTone exposing (SkinTone)
-import Avataaars.Top as Top exposing (Top(..))
+import Avataaars.SkinTone exposing (SkinTone)
+import Avataaars.Top exposing (Top)
 import Svg exposing (Svg, circle, g, mask, path)
 import Svg.Attributes as A exposing (cx, cy, d, fill, fillOpacity, id, r, transform, viewBox)
 
@@ -65,6 +61,7 @@ type alias Avataaar =
 view : { width : Int, height : Int } -> Avataaar -> Svg msg
 view { width, height } { circleBg, skinTone, clothes, face, top } =
     let
+        children : List (Svg msg)
         children =
             [ g [ transform "translate(32, 36)" ]
                 [ mask [ id "mask-6", fill "white" ]

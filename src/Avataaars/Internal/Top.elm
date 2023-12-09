@@ -1,7 +1,7 @@
 module Avataaars.Internal.Top exposing (view)
 
-import Avataaars.Accessory exposing (Accessory(..))
-import Avataaars.FacialHair exposing (FacialHair(..))
+import Avataaars.Accessory exposing (Accessory)
+import Avataaars.FacialHair exposing (FacialHair)
 import Avataaars.HairColor exposing (HairColor)
 import Avataaars.HatColor exposing (HatColor)
 import Avataaars.Internal.Accessory as Accessory
@@ -451,15 +451,18 @@ shortHairTheCaesarSidePart =
 longHairFrida : Accessory -> FacialHair -> Svg msg
 longHairFrida accessory facialHair =
     let
+        stdOffset : Svg msg
         stdOffset =
             feOffset [ dx "0", dy "2", in_ "SourceAlpha", result "shadowOffsetOuter1" ] []
 
+        standardMerge : Svg msg
         standardMerge =
             feMerge []
                 [ feMergeNode [ in_ "shadowMatrixOuter1" ] []
                 , feMergeNode [ in_ "SourceGraphic" ] []
                 ]
 
+        stdFilter : List (Svg msg)
         stdFilter =
             [ stdOffset, matrixDot2, standardMerge ]
     in

@@ -12,7 +12,8 @@ module Avataaars.FacialHair exposing (FacialHair(..))
 import Avataaars.HairColor exposing (HairColor)
 
 
-{-| -}
+{-| Facial hair kinds.
+-}
 type FacialHair
     = Blank
     | BeardMedium HairColor

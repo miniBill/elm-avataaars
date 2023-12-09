@@ -1,7 +1,7 @@
 module Avataaars.Internal.HatColor exposing (view)
 
 import Avataaars.HatColor exposing (HatColor)
-import Svg exposing (Svg, g, mask, rect)
+import Svg exposing (Svg, g, rect)
 import Svg.Attributes as A exposing (fill, fillRule, height, id, width, x, y)
 
 

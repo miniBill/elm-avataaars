@@ -10,25 +10,18 @@ module Avataaars.Random exposing (generate)
 -}
 
 import Avataaars exposing (Avataaar)
-import Avataaars.Accessory exposing (Accessory(..))
+import Avataaars.Accessory exposing (Accessory)
 import Avataaars.Clothes exposing (Clothes(..))
-import Avataaars.Eyebrow exposing (Eyebrow(..))
-import Avataaars.Eyes exposing (Eyes(..))
+import Avataaars.Eyebrow exposing (Eyebrow)
+import Avataaars.Eyes exposing (Eyes)
 import Avataaars.Face exposing (Face)
-import Avataaars.FacialHair exposing (FacialHair(..))
-import Avataaars.Graphics exposing (Graphics(..))
+import Avataaars.FacialHair exposing (FacialHair)
+import Avataaars.Graphics exposing (Graphics)
 import Avataaars.HairColor exposing (HairColor)
 import Avataaars.HatColor exposing (HatColor)
-import Avataaars.Mouth exposing (Mouth(..))
+import Avataaars.Mouth exposing (Mouth)
 import Avataaars.SkinTone exposing (SkinTone)
-import Avataaars.Top
-    exposing
-        ( Top(..)
-        , TopAccessoryFacialHair(..)
-        , TopHairColorAccessoryFacialHair(..)
-        , TopHatColorAccessory(..)
-        , TopHatColorAccessoryFacialHair(..)
-        )
+import Avataaars.Top exposing (Top, TopAccessoryFacialHair, TopHairColorAccessoryFacialHair(..), TopHatColorAccessory, TopHatColorAccessoryFacialHair)
 import Random exposing (Generator)
 import Random.Extra
 
@@ -54,20 +47,16 @@ generateAccessory =
 
 generateClothes : Generator Clothes
 generateClothes =
-    Random.pair generateClothesColor generateGraphics
-        |> Random.andThen
-            (\( color, graphic ) ->
-                Random.uniform Avataaars.Clothes.BlazerShirt
-                    [ Avataaars.Clothes.BlazerSweater
-                    , CollarSweater color
-                    , GraphicShirt color graphic
-                    , Hoodie color
-                    , Overall color
-                    , ShirtCrewNeck color
-                    , ShirtScoopNeck color
-                    , ShirtVNeck color
-                    ]
-            )
+    Random.Extra.choices (Random.constant Avataaars.Clothes.BlazerShirt)
+        [ Random.constant Avataaars.Clothes.BlazerSweater
+        , Random.map CollarSweater generateClothesColor
+        , Random.map2 GraphicShirt generateClothesColor generateGraphics
+        , Random.map Hoodie generateClothesColor
+        , Random.map Overall generateClothesColor
+        , Random.map ShirtCrewNeck generateClothesColor
+        , Random.map ShirtScoopNeck generateClothesColor
+        , Random.map ShirtVNeck generateClothesColor
+        ]
 
 
 generateClothesColor : Generator Avataaars.Clothes.Color

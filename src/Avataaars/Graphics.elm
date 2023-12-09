@@ -10,7 +10,8 @@ module Avataaars.Graphics exposing (Graphics(..))
 -}
 
 
-{-| -}
+{-| Graphics for shirts.
+-}
 type Graphics
     = Bat
     | Cumbia

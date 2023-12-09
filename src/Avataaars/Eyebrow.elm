@@ -10,7 +10,8 @@ module Avataaars.Eyebrow exposing (Eyebrow(..))
 -}
 
 
-{-| -}
+{-| Eyebrow kinds.
+-}
 type Eyebrow
     = Angry
     | AngryNatural

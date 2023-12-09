@@ -20,7 +20,8 @@ These are just `String`s, so feel free to define others, and _do_ let your users
 -}
 
 
-{-| -}
+{-| Hat colors are just strings containing a color such as `"#262E33"`.
+-}
 type alias HatColor =
     String
 

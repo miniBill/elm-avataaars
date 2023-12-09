@@ -1,7 +1,7 @@
 module Avataaars.Internal.Clothes exposing (view)
 
 import Avataaars.Clothes exposing (Clothes(..), Color)
-import Avataaars.Graphics exposing (Graphics(..))
+import Avataaars.Graphics exposing (Graphics)
 import Avataaars.Internal.Graphics as Graphics
 import Svg exposing (Svg, circle, ellipse, g, mask, path, rect, use)
 import Svg.Attributes as A exposing (cx, cy, d, fill, fillOpacity, height, id, opacity, r, rx, ry, strokeWidth, transform, width, x, xlinkHref, y)

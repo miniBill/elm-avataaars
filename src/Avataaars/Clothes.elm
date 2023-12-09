@@ -19,10 +19,11 @@ These are just `String`s, so feel free to define others, and _do_ let your users
 
 -}
 
-import Avataaars.Graphics exposing (Graphics(..))
+import Avataaars.Graphics exposing (Graphics)
 
 
-{-| -}
+{-| Clothes kinds.
+-}
 type Clothes
     = BlazerShirt
     | BlazerSweater
@@ -35,7 +36,8 @@ type Clothes
     | ShirtVNeck Color
 
 
-{-| -}
+{-| A color is just a string such as `"#262E33"`.
+-}
 type alias Color =
     String
 
