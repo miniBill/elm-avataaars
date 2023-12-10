@@ -12,7 +12,7 @@ view skinTone =
         , y "0"
         , width "264"
         , height "280"
-        , A.mask "url(#mask-6)"
+        , A.mask "url(#viewMask)"
         , fill skinTone
         ]
         []

@@ -66,19 +66,19 @@ blazerSweater =
 
 collarSweater : Color -> List (Svg msg)
 collarSweater color =
-    [ mask [ id "sweaterMask", fill "white" ]
+    [ mask [ id "collarSweaterMask", fill "white" ]
         [ path [ d "M105,29 L104,29 L104,29 C64,29 32,61 32,101 L32,110 L232,110 L232,101 C232,61 200,29 160,29 L160,29 L159,29 C159,30 159,31 159,32 C159,46 147,57 132,57 C117,57 105,46 105,32 C105,31 105,30 105,29 Z" ] [] ]
     , use [ fill "#E6E6E6", xlinkHref "#sweaterPath" ] []
-    , colors { maskId = "sweaterMask", color = color }
+    , colors { maskId = "collarSweaterMask", color = color }
     , path [ d "M156,22 C162,27 166,33 166,40 C166,47 162,54 155,58 L150,54 L145,54 L146,51 L146,51 C152,48 156,43 156,37 L156,22 Z M108,22 C101,26 97,33 97,40 C97,47 101,54 108,59 L114,54 L119,54 L118,51 L118,51 C112,48 108,43 108,37 L108,22 Z", fill "#F2F2F2" ] []
     ]
 
 
 graphicsShirt : Color -> Graphics -> List (Svg msg)
 graphicsShirt color graphics =
-    [ mask [ id "graphicsMask", fill "white" ]
+    [ mask [ id "graphicsShirtMask", fill "white" ]
         [ path [ d "M166,29 C203,32 232,63 232,101 L232,110 L32,110 L32,101 C32,63 62,32 99,29 C99,30 99,31 99,33 C99,44 114,54 133,54 C151,54 166,44 166,33 C166,31 166,30 166,29 Z" ] [] ]
-    , colors { maskId = "graphicsMask", color = color }
+    , colors { maskId = "graphicsShirtMask", color = color }
     , Graphics.view graphics
     ]
 
@@ -105,27 +105,27 @@ overall color =
 
 shirtCrewNeck : Color -> List (Svg msg)
 shirtCrewNeck color =
-    [ mask [ id "crewMask", fill "white" ]
+    [ mask [ id "shirtCrewNeckMask", fill "white" ]
         [ path [ d "M166,29 C203,32 232,63 232,101 L232,110 L32,110 L32,101 C32,63 62,32 99,29 C99,30 99,30 99,30 C99,42 114,52 133,52 C151,52 166,42 166,30 C166,30 166,30 166,29 Z" ] [] ]
-    , colors { maskId = "crewMask", color = color }
-    , ellipse [ cx "133", cy "32", rx "40", ry "27", opacity "0.6", strokeWidth "1", A.mask "url(#crewMask)", fillOpacity "0.16", fill "#000000" ] []
+    , colors { maskId = "shirtCrewNeckMask", color = color }
+    , ellipse [ cx "133", cy "32", rx "40", ry "27", opacity "0.6", strokeWidth "1", A.mask "url(#shirtCrewNeckMask)", fillOpacity "0.16", fill "#000000" ] []
     ]
 
 
 shirtScoopNeck : Color -> List (Svg msg)
 shirtScoopNeck color =
-    [ mask [ id "scoopMask", fill "white" ]
+    [ mask [ id "shirtScoopNeckMask", fill "white" ]
         [ path [ d "M182,32 C211,41 232,69 232,101 L232,110 L32,110 L32,101 C32,68 54,41 84,32 C83,33 83,35 83,36 C83,53 105,66 133,66 C160,66 182,53 182,36 C182,35 182,34 182,32 Z" ] [] ]
-    , colors { maskId = "scoopMask", color = color }
+    , colors { maskId = "shirtScoopNeckMask", color = color }
     ]
 
 
 shirtVNeck : Color -> List (Svg msg)
 shirtVNeck color =
-    [ mask [ id "vMask", fill "white" ]
+    [ mask [ id "shirtVNeckMask", fill "white" ]
         [ path [ d "M171,30 C206,35 232,65 232,101 L232,110 L32,110 L32,101 C32,65 58,35 93,30 C94,35 96,40 100,44 L100,44 L129,70 C131,71 133,71 135,70 L135,70 L164,44 C164,43 165,43 165,42 C168,39 171,34 171,30 Z" ] [] ]
     , use [ fill "#E6E6E6", xlinkHref "#vPath" ] []
-    , colors { maskId = "vMask", color = color }
+    , colors { maskId = "shirtVNeckMask", color = color }
     ]
 
 
