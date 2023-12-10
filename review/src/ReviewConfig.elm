@@ -32,6 +32,7 @@ import NoUnused.Exports
 import NoUnused.Parameters
 import NoUnused.Patterns
 import NoUnused.Variables
+import NoUnusedOrDuplicated.SvgIds
 import Review.Rule as Rule exposing (Rule)
 import Simplify
 
@@ -64,4 +65,5 @@ config =
     , NoUnused.Patterns.rule
     , NoUnused.Variables.rule
     , Simplify.rule Simplify.defaults
+    , NoUnusedOrDuplicated.SvgIds.rule
     ]
