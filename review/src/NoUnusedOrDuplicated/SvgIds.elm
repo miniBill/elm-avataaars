@@ -196,8 +196,27 @@ expressionVisitor node context =
                   }
                 )
 
+            else if name == "xlinkHref" && String.startsWith "#" url then
+                let
+                    id : String
+                    id =
+                        String.dropLeft 1 url
+                in
+                ( []
+                , { context
+                    | usedIds = Dict.insert id () context.usedIds
+                  }
+                )
+
             else
                 ( [], context )
+
+        Expression.RecordExpr ((Node _ ( Node _ "maskId", Node _ (Expression.Literal id) )) :: _) ->
+            ( []
+            , { context
+                | usedIds = Dict.insert id () context.usedIds
+              }
+            )
 
         _ ->
             ( [], context )
